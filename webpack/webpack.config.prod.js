@@ -10,7 +10,7 @@ module.exports = merge(commonConfig, {
   mode: 'production',
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '..', 'build'),
     filename: '[name].bundle.js'
   },
   optimization: {
@@ -32,5 +32,8 @@ module.exports = merge(commonConfig, {
       hash: true,
       template: path.resolve(__dirname, '..', 'public', 'index.html')
     })
-  ]
+  ],
+  resolve: {
+    modules: ['node_modules', 'build', path.join('src')]
+  }
 });

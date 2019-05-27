@@ -33,6 +33,6 @@ module.exports = merge(commonConfig, {
     new CleanWebpackPlugin()
   ],
   resolve: {
-    modules: ['node_modules', path.join('src')]
-  },
+    modules: ['node_modules', 'build-dev', path.join('src')]
+  }
 });

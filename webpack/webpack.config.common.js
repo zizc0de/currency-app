@@ -11,7 +11,7 @@ module.exports = {
         test: /(\.js|jsx)$/,
         exclude: [
           '/node_modules/',
-          '/dist/'
+          '/build/'
         ],
         use: ['babel-loader']
       },
@@ -38,7 +38,6 @@ module.exports = {
   resolve: {
     alias: {
       'react-dom': '@hot-loader/react-dom'
-    },
-    modules: ['node_modules', 'dist', path.join('src')]
-  },
+    }
+  }
 };
