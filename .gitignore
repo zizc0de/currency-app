@@ -5,6 +5,6 @@
 .history
 .vscode
 
-dist
+build
 build-dev
 node_modules
