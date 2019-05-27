@@ -1,0 +1,10 @@
+*.code-workspace
+*.log
+
+.tags*
+.history
+.vscode
+
+dist
+build-dev
+node_modules
