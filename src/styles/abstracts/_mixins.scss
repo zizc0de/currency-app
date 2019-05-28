@@ -1,0 +1,23 @@
+@mixin font-weight($args...) {
+  @each $name, $weight in keywords($args) {
+    .text-#{$name} {
+      font-weight: $weight;
+    }
+  }
+}
+
+@mixin font-color($args...) {
+  @each $name, $color in keywords($args) {
+    .color-#{$name} {
+      color: $color;
+    }
+  }
+}
+
+@mixin text-align($args...) {
+  @each $name, $align in keywords($args) {
+    .text-align-#{$name} {
+      text-align: $align;
+    }
+  }
+}

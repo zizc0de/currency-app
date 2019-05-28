@@ -1,0 +1,18 @@
+@include font-weight(
+  $light: 300,
+  $regular: 400,
+  $medium: 500,
+  $bold: 700
+);
+
+@include text-align(
+  $left: left,
+  $right: right,
+  $center: center,
+  $justify: justify
+);
+
+p {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
