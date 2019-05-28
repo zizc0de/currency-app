@@ -1,0 +1,36 @@
+.exchange-list {
+  .exchange-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &:not(:last-child) {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-bottom: 3px solid #F5F5F5;
+    }
+
+    &__currency,
+    &__amount {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &__currency-rate {
+      font-size: 13px;
+      font-weight: 500;
+      color: #333333;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &__currency-desc {
+      font-style: italic;
+      font-size: 13px;
+      font-weight: 500;
+      color: #777777;
+      margin-bottom: 3px;
+    }
+  }
+}
