@@ -21,10 +21,10 @@ process.on('uncaughtException', onUnhandledError)
 
 logger.info(`Application env: ${process.env.NODE_ENV}`);
 
+app.use(logger.expressMiddleware);
+
 app.set('env', process.env.NODE_ENV);
 app.use('/public', express.static('public/assets'));
-
-app.use(logger.expressMiddleware);
 
 setupAppRoutes(app);
 
