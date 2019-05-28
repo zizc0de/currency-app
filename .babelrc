@@ -10,6 +10,11 @@
         ],
         "alias": {
           "@": "./src",
+          "actions": "./src/actions",
+          "config": "./src/config",
+          "constants": "./src/constants",
+          "reducers": "./src/reducers",
+          "services": "./src/services",
           "components": "./src/components",
           "pages": "./src/pages"
         }
