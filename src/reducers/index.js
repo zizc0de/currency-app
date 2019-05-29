@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
 import currency from './currencyReducer';
+import exchange from './exchangeReducer';
 
 const reducers = combineReducers({
-  currency
+  currency,
+  exchange
 });
 
 export default reducers;
