@@ -4,7 +4,7 @@ const logger = require('./logger');
 const setupAppRoutes = process.env.NODE_ENV === 'development' ? require('./middleware/development') : require('./middleware/production');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-process.env.HTTP_PORT = process.env.HTTP_PORT || 7000;
+process.env.PORT = process.env.PORT || 7000;
 
 function onUnhandledError(err) {
   try {
@@ -28,10 +28,10 @@ app.use('/public', express.static('public/assets'));
 
 setupAppRoutes(app);
 
-app.listen(process.env.HTTP_PORT, (error) => {
+app.listen(process.env.PORT, (error) => {
   if (error) {
-    logger.warn(`Server cannot be run on port ${process.env.HTTP_PORT}`);
+    logger.warn(`Server cannot be run on port ${process.env.PORT}`);
   } else {
-    logger.info(`HTTP server is now running on http://localhost:${process.env.HTTP_PORT}`);
+    logger.info(`HTTP server is now running on http://localhost:${process.env.PORT}`);
   }
 });
