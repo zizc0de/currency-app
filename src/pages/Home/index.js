@@ -5,6 +5,7 @@ import { exchangeActions } from 'actions';
 
 import ExchangeResult from 'components/ExchangeResult';
 import Navbar from 'components/Navbar';
+import CurrencyLoader from 'components/ContentLoader/CurrencyLoader';
 
 import { find } from 'lodash';
 
@@ -100,37 +101,49 @@ class Home extends Component {
             </div>
           </div>
 
-          <section>
-            <div className="row">
-              <div className="col-xs-12">
-                <p className="color-grey">Results</p>
-              </div>
-            </div>
-          </section>
+          {this.state.currency.length > 0 &&
+            <Fragment>
+              <section>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <p className="color-grey">Results</p>
+                  </div>
+                </div>
+              </section>
 
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="card py-0">
-                <div className="card-body">
-                  {asyncState === 'idle' || asyncState === 'loading' ? (
-                    <div className="row">
-                      <div className="col-xs-12">
-                        <p>Loading..</p>
-                      </div>
+              <div className="row">
+                <div className="col-xs-12">
+                  <div className="card py-0">
+                    <div className="card-body">
+                      {asyncState === 'idle' || asyncState === 'loading' ? (
+                        <div className="row">
+                          <div className="col-xs-12">
+                            <div className="py-3">
+                              <CurrencyLoader />
+                            </div>
+                            <div className="py-3">
+                              <CurrencyLoader />
+                            </div>
+                            <div className="py-3">
+                              <CurrencyLoader />
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                          <ExchangeResult
+                            amount={amount}
+                            base={base}
+                            currencyList={this.state.currency}
+                            rates={rates}
+                            onClick={(key) => this.removeCurrency(key)}
+                          />
+                        )}
                     </div>
-                  ) : (
-                      <ExchangeResult
-                        amount={amount}
-                        base={base}
-                        currencyList={this.state.currency}
-                        rates={rates}
-                        onClick={(key) => this.removeCurrency(key)}
-                      />
-                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </Fragment>
+          }
 
           {form || this.state.currency.length === 0 ? (
             <Fragment>
