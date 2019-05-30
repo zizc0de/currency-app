@@ -32,13 +32,13 @@ class ExchangeResult extends Component {
                         <div className="exchange-item__currency">{row}</div>
                       </div>
                       <div className="col-auto end-xs">
-                        <div className="exchange-item__amount">{amount * rates[row]}</div>
+                        <div className="exchange-item__amount">{parseFloat(amount * rates[row]).toFixed(2)}</div>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-xs-12">
                         <p className="exchange-item__currency-desc">{row} - {find(currency, { name: row }).desc}</p>
-                        <p className="exchange-item__currency-rate">1 {base} = {row} {rates[row]}</p>
+                        <p className="exchange-item__currency-rate">1 {base} = {row} {parseFloat(rates[row]).toFixed(2)}</p>
                       </div>
                     </div>
                   </div>
@@ -58,6 +58,8 @@ class ExchangeResult extends Component {
 }
 
 ExchangeResult.propTypes = {
+  amount: PropTypes.number.isRequired,
+  rates: PropTypes.number.isRequired,
   currencyList: PropTypes.array.isRequired,
   rates: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired

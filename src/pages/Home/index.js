@@ -33,7 +33,7 @@ class Home extends Component {
     this.setState({
       [name]: value
     });
-
+    
     if (name === 'base') {
       this.getRates(value);
     }
@@ -92,7 +92,7 @@ class Home extends Component {
                     </div>
                     <div className="col-xs-6">
                       <div className="w-100">
-                        <input type="text" name="amount" value={amount} onChange={this.handleChange} className="form-control text-align-right" placeholder="Amount" />
+                        <input type="text" name="amount" value={parseInt(amount)} onChange={this.handleChange} className="form-control text-align-right" placeholder="Amount" />
                       </div>
                     </div>
                   </div>
