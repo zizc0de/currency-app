@@ -21,6 +21,7 @@ class Home extends Component {
       form: false
     }
 
+    this.amountType = this.amountType.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -30,6 +31,7 @@ class Home extends Component {
 
   handleChange = (event) => {
     const { name, value } = event.target;
+    
     this.setState({
       [name]: value
     });
@@ -37,6 +39,16 @@ class Home extends Component {
     if (name === 'base') {
       this.getRates(value);
     }
+  }
+
+  amountType = (event) => {
+    const { value } = event.target;
+    const re = /^[0-9\b]+$/;
+    if(value !== '' && re.test(value)) {
+      this.setState({
+        amount: parseInt(value)
+      });
+    }    
   }
 
   removeCurrency = (key) => {
@@ -92,7 +104,7 @@ class Home extends Component {
                     </div>
                     <div className="col-xs-6">
                       <div className="w-100">
-                        <input type="text" name="amount" value={parseInt(amount)} onChange={this.handleChange} className="form-control text-align-right" placeholder="Amount" />
+                        <input type="text" name="amount" value={parseInt(amount)} onChange={this.amountType} className="form-control text-align-right" placeholder="Amount" />
                       </div>
                     </div>
                   </div>
