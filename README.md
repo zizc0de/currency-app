@@ -1,4 +1,5 @@
 # Preliminary test frontend at SHOPEE
+Demo: https://shopee-currency.herokuapp.com/
 
 ## Overview
 Simple app that calculates a converted foreign exchange currency using the Foreign Exchange Rates API
